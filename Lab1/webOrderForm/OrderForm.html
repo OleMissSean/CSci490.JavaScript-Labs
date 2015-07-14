@@ -1,0 +1,161 @@
+<!--
+//Sean Stasny
+//01-06-2015
+//CSci 490: JavaScript
+//Cynthia Zickos
+//Reference(s): http://www.cs.olemiss.edu/~cbzickos/download_files/490JS/formValidationSpain/
+-->
+<!DOCTYPE html>
+
+<html lang = "en-US">
+
+<head>
+<title> CSci490.JavaScript.Lab1 </title>
+<link rel="stylesheet" type = "text/css" href="css/lab1Style.css">
+<script type="text/javascript" src="js/lab1Script.js"></script>
+
+</head>
+
+<body bgcolor="#000000" TEXT="ffffff"> 
+
+<h1>Tea Order Form</h1>
+
+<form name="PersonalForm" method="post" onReset="return confirm('Are you sure you want to clear the form?')">
+  <table border="0">
+    <tr>
+      <th align="left"><h3>Personal Information</h3></th>
+        <th>&nbsp;</th>
+    </tr>
+   <tr> <td>First Name: </td>
+        <td><input type="text" name="firstName" required></td>
+   </tr>
+   <tr> <td>Last Name:  </td>
+        <td><input type="text" name="lastName" required></td>
+   </tr>
+   <tr> <td>Address:    </td>
+        <td><input type="text" name="address" required></td>
+   </tr>
+   <tr> <td>Phone:      </td>
+        <td><input type="text" name="phoneNumber" required></td>
+   </tr>
+   <tr> <td>Email:      </td>
+        <td><input type="text" name="email" required></td>
+   <tr>    
+       <td>Preferred Mode of Contact:</td>
+       <td colspan = "3">
+            <input type = "Radio" name = "ContactPref" value = "Mail" required> Mail
+            <input type = "Radio" name = "ContactPref" value = "Phone" required> Phone
+            <input type = "Radio" name = "ContactPref" value = "Email" required> Email
+       </td>
+   </tr>
+   <tr>
+      <td>Credit Card Type:</td>
+       <td><select name = "CCType" required>
+            <option value = "">'Please Select Type'</option>
+            <option value = "01">Visa</option>
+            <option value = "02">MasterCard</option>
+            <option value = "03">Discover</option>
+            <option value = "04">American Express</option>
+            </select>
+       </td>
+   </tr>
+   <tr>
+        <td>
+          <input type="submit" value="Submit">
+          <td>
+          </tr>
+</table>   
+</form>
+
+
+<form name="OrderForm" method="post" onReset="return confirm('Are you sure you want to clear the form?')">
+  <table border="0">
+     <tr> 
+      <th align="left"><h3>Order Details</h3></th>
+	  <th>&nbsp;</th>
+    </tr>
+    <tr align="left"> 
+      <th align="left">Flavor</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th align="right">Ext. Price</th>
+    </tr>
+    <tr class=odd> 
+      <td>Black: Plantation Mint</td>
+      <td> 
+        <input type="text" name="BMBqty" size="7" tabindex="1"
+               onChange="extend(this.form, 'BMB', 6.95)">
+        @</td>
+      <td>$6.95 per box (30 bags)</td>
+      <td> 
+        $<input type="text" name="BMBext" size="11"
+                onFocus="this.blur()">
+      </td>
+    </tr>
+    <tr class=even> 
+      <td>Black: French Vanilla</td>
+      <td> 
+        <input type="text" name="FVqty" size="7" tabindex="2"
+               onChange="extend(this.form, 'FV', 7.59)">
+        @</td>
+      <td>$7.59 per box (30 bags)</td>
+      <td> 
+        $<input type="text" name="FVext" size="11"
+                onFocus="this.blur()">
+      </td>
+    </tr>
+    <tr class=odd> 
+      <td>Green: Pomegranate</td>
+      <td> 
+        <input type="text" name="GCMqty" size="7" tabindex="3"
+               onChange="extend(this.form, 'GCM', 9.50)">
+        @</td>
+      <td>$9.50 per box (30 bags)</td>
+      <td> 
+        $<input type="text" name="GCMext" size="11"
+                onFocus="this.blur()">
+      </td>
+    </tr>
+    <tr class=even> 
+      <td>Herbal: Ginger Detox</td>
+      <td> 
+        <input type="text" name="HKqty" size="7" tabindex="4"
+               onChange="extend(this.form, 'HK', 8.49)">
+        @</td>
+      <td>$8.49 per box (30 bags)</td>
+      <td> 
+        $<input type="text" name="HKext" size="11"
+                onFocus="this.blur()">
+      </td>
+    </tr>
+    <tr class=odd> 
+      <td>Herbal: Peppermint</td>
+      <td> 
+        <input type="text" name="JBqty" size="7" tabindex="5"
+               onChange="extend(this.form, 'JB', 5.00)">
+        @</td>
+      <td>$5.00 per box (30 bags)</td>
+      <td align="right"> 
+        $<input type="text" name="JBext" size="11"
+                onFocus="this.blur()">
+      </td>
+    </tr>
+    <tr> 
+      <th colspan=3 align="right"><b>Order Total:</b></th>
+      <th align=left>
+        $<input type="text" name="Total" size="11"
+                onFocus="this.blur()">
+      </th>
+    </tr>
+    <tr> 
+      <td colspan=4 align="center">
+        <input class=normal type="submit" value="Send Order"
+               tabindex="6">
+        <input class= normal type="reset" value="Clear Form" 
+               tabindex="7">
+       </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
